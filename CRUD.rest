@@ -1,0 +1,31 @@
+# Obtener todos los usuarios
+GET http://localhost:3000/usuarios
+
+###
+
+# Agregar un nuevo usuario
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+    "nombre": "Ken",
+    "edad": 31,
+    "lugarProcedencia": "Estados Unidos"
+}
+
+###
+
+# Actualizar un usuario existente
+PUT http://localhost:3000/usuarios/nombreusuario
+Content-Type: application/json
+
+{
+    "nombre": "",
+    "edad": ,
+    "lugarProcedencia": ""
+}
+
+###
+
+# Eliminar un usuario
+DELETE http://localhost:3000/usuarios/nombreusuario
