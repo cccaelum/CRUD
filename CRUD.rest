@@ -3,12 +3,17 @@ GET http://localhost:3000/usuarios
 
 ###
 
+# Obtener un usuario por nombre
+GET http://localhost:3000/usuarios/nombreusuario
+
+###
+
 # Agregar un nuevo usuario
 POST http://localhost:3000/usuarios
 Content-Type: application/json
 
 {
-    "nombre": "Ken",
+    "nombre": "Reyes",
     "edad": 31,
     "lugarProcedencia": "Estados Unidos"
 }
@@ -16,16 +21,16 @@ Content-Type: application/json
 ###
 
 # Actualizar un usuario existente
-PUT http://localhost:3000/usuarios/nombreusuario
+PUT http://localhost:3000/usuarios/Ryu
 Content-Type: application/json
 
 {
     "nombre": "",
-    "edad": ,
+    "edad": 46,
     "lugarProcedencia": ""
 }
 
 ###
 
 # Eliminar un usuario
-DELETE http://localhost:3000/usuarios/nombreusuario
+DELETE http://localhost:3000/usuarios/Ryu

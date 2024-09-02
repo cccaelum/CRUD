@@ -13,6 +13,8 @@ let usuarios = [
     { id: 5, nombre: 'Blanka', edad: 32, lugarProcedencia: 'Brasil' },
 ];
 
+let nextId = usuarios.length + 1
+
 //READ
 app.get('/', (req, res) => {
   res.send(`
@@ -26,15 +28,26 @@ app.get('/', (req, res) => {
   `);
 });
 
-
 app.get('/usuarios', (req, res) => {
     res.json(usuarios);
   })
 
+//Obtiene usuario por nombre
+app.get('/usuarios/:nombre', (req, res) => {
+  const nombre = req.params.nombre
+  const usuario = usuarios.find(usuario => usuario.nombre === nombre)
+
+  if (!usuario) {
+    res.status(404).json({ message: `Usuario ${nombreUsuario} no existe` });
+   } else {
+    res.json(usuario)
+   }
+})
+
 //CREATE
 app.post('/usuarios', (req, res) => {
     const nuevoUser = {
-      id: usuarios.length + 1,
+      id: nextId++,
       nombre: req.body.nombre,
       edad: req.body.edad,
       lugarProcedencia: req.body.lugarProcedencia,
